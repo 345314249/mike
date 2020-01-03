@@ -1,1 +1,132 @@
-Hellllo, people
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introducing Yifei</title>
+    <link rel="stylesheet" href="css/minireset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4BFWRRLE0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P4BFWRRLE0');
+    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
+    <style>
+        html {
+            background-color: #00eeff;
+            background-image: linear-gradient(to bottom right, #666ee9, #06ffc9);
+            color: #fff;
+        }
+        .wallpaper {
+            background-image: url(wallpaper.jpg);
+        }
+    </style>
+    <script>
+        function loadImage(id, targetId) {
+            let el = document.getElementById(id)
+            let targetEl = targetId ? document.getElementById(targetId) : el
+            let imageToLoad
+
+            if (el.dataset.image) {
+                imageToLoad = el.dataset.image
+            } else if (typeof el.currentSrc === 'undefined') {
+                imageToLoad = el.scr
+            } else {
+                imageToLoad = el.currentSrc
+            }
+
+            if (imageToLoad) {
+                let img = new Image();
+                img.src = imageToLoad;
+                img.onload = function () {
+                    targetEl.classList.add('is-loaded')
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadImage('wallpaper')
+            loadImage('pictureImage', 'picture')
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <div id="wallpaper" class="wallpaper" data-image="wallpaper.jpg"></div>
+    <div class="content">
+        <aside class="side">
+            <figure id="picture" class="picture">
+                <div class="picture-shadow">
+                </div>
+                <img id="pictureImage" class="picture-image" src="portrait.jpg" alt="Portrait of Yifei Zhang"
+                    srcset="portrait.jpg" width="320" height="320">
+            </figure>
+        </aside>
+        <main class="about">
+            <h1 class="name">
+                 Mike 
+            </h1>
+            <p class="job">
+                M.Y.
+            </p>
+            <hr class="hr">
+            <div class="description">
+                <p>
+                    Best human of all-"Mikey"<br>
+                   
+                </p>
+                <p>
+                    <a href="christmas.html"></a>
+                </p>
+            </div>
+            <div class="contact">
+                <a class="button" href="mailto:#bestmikey1113@gmail.com">Email me</a>
+            </div>
+            <ul class="social">
+                <li>
+                    <a href="https://twitter.com/yifeica">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/yifeica">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </main>
+    </div>
+    <noscript>
+        <style>
+            .wallpaper {
+                animation-name: zoomOut;
+            }
+
+            .picture {
+                animation-name: dropIn;
+            }
+        </style>
+
+    </noscript>
+</body>
+
+</html>
